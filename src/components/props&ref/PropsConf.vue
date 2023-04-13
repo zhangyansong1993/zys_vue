@@ -5,7 +5,7 @@
     <span>性别:{{sex}}</span><br>
     <!-- v-fBind 是自定义指令，在plugins.js插件中配置 -->
     <input type="text" v-fBind:value="isname" />
-    <h4><span style="color:red">props配置项</span>用来接收引用组件传来的数据</h4>
+    <h4><span style="color:red">props配置项</span>用于父组件给子组件传数据</h4>
   </div>
 </template>
 

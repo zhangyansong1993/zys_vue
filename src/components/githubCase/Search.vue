@@ -19,7 +19,7 @@ export default {
     search() {
       this.$bus.$emit('updateUserList',{
         isFirst:false,
-        isLoaing: true,
+        isLoaning: true,
         errMsg: '',
         users: []
       });
@@ -30,13 +30,13 @@ export default {
             console.log(response.data.items)
             //触发getUsers并发送数据
             this.$bus.$emit('updateUserList',{
-              isLoaing: false,
+              isLoaning: false,
               users: response.data.items
             });
           },
           error => {
             this.$bus.$emit('updateUserList',{
-              isLoaing: false,
+              isLoaning: false,
               errMsg: error.message,
               users: []
             });

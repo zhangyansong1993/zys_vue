@@ -1,6 +1,10 @@
 <template>
     <div class="size">
-        <h4>{{name}}</h4>
+      <button @click="isShow = !isShow">显示/隐藏</button>
+<!--      appear开启加载页面就开始动画 -->
+      <transition name="hello" appear>
+        <h4 v-show="isShow">{{name}}</h4>
+      </transition>
     </div>
 
 </template>
@@ -10,7 +14,8 @@
         name:"FirstVue",
         data() {
             return {
-                name:'第一个Vue组件',
+                name:'动画效果',
+                isShow:true
             }
         },
     }
@@ -29,5 +34,22 @@
         margin-bottom: 10px;
         margin-right: 10px;
         float: left;
+    }
+    h4{
+      background-color: aqua;
+    }
+    .hello-enter-active{
+      animation: test 1s;
+    }
+    .hello-leave-active{
+      animation: test 1s reverse;
+    }
+    @keyframes test {
+      from{
+        transform: translateX(-100%);
+      }
+      to{
+        transform: translateX(0px);
+      }
     }
 </style>

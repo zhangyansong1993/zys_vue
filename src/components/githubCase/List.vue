@@ -8,8 +8,8 @@
         <span>{{ u.login }}</span>
       </div>
     </div>
-    <h4 v-show="user.isFirst">欢迎使用</h4>
-    <h4 v-show="user.isLoaing">加载中...</h4>
+    <h4 v-show="user.isFirst">欢迎使用(github搜索案例)</h4>
+    <h4 v-show="user.isLoaning">加载中...</h4>
     <h4 v-show="user.errMsg">{{user.errMsg}}</h4>
   </div>
 </template>
@@ -22,7 +22,7 @@ export default {
     return {
       user:{
         isFirst: true,
-        isLoaing: false,
+        isLoaning: false,
         errMsg: '',
         users: []
       }
